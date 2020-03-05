@@ -1,6 +1,6 @@
 # Mongo-Scraper:
 Mongo scraper is the application which was created for purpose of scraping news from NPR news webpage. This application will allow user to scrape 20 recent articles from that day. User will have ability to enter note and saved the article for the future read. Also user can unmark saved article by clicking the "saved " button to change release the saved articles from the saved page.
-
+![mongo-scraper](nprScraperHp.png)
 
 ## Technologies used:
 
@@ -12,4 +12,24 @@ Mongo scraper is the application which was created for purpose of scraping news 
 * [MongoDB](https://docs.mongodb.com/guides/): NoSql Database
 * [Mongoose](https://mongoosejs.com/docs/): ODM for MongoDB
 * [Heroku](https://devcenter.heroku.com/articles/github-integration): Deployment using Heroku
+
+## How to get start with the app:
+
+### Basic run command
+ - Goto the root of directory to install dependencies then
+
+        `$ npm install`
+                express
+                express-handlebars
+                Axios
+                Cheerio
+                MongoD - Mongo
+                Mongoose
+                
+
+### How it works - Simple Overview
+
+A get request is made by axios that receives the DOM (document-object model) of NPR web forum. Cheerio then captures each post's headline, link, and summary. That data is then stored in the MongoDB database (with some additional property names and values assigned to it) via mongoose ODM. 
+
+A RESTful api is then constructed to handle request and response between the client and server. Adding a note, updating an article, and adding an article to your saved articles are examples of using the api architecture. Express-handlebars is used as the view-engine to render the client (browser for users).
 
